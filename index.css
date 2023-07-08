@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Work+Sans&display=swap");
+body {
+  font-family: "Work sans";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+.todo-container input {
+  padding: 0.6em;
+  border: 0;
+  border-bottom: 1px solid rgb(252, 137, 137);
+}
+.todo-container input:focus {
+  outline: none;
+}
+.todo-container button {
+  padding: 0.6em;
+  width: 80px;
+  border: 0;
+  background-color: rgb(252, 137, 137);
+  border-radius: 5px;
+  color: white;
+  transition: 0.2s;
+}
+.todo-container button:hover {
+  background-color: rgb(219, 121, 121);
+  transition: 0.2s;
+}
+.todo-container .list {
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.todo-container .list li {
+  list-style: none;
+  padding: 1em;
+}
+
+.row_list {
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: 0.2s;
+  white-space: nowrap;
+  overflow-x: auto;
+  text-overflow: ellipsis;
+}
+.row_list button {
+  background-color: blue;
+  position: absolute;
+  right: 2em;
+}
+
+.row_list:hover {
+  box-shadow: 0 0 10px grey;
+  transition: 0.2s;
+  transform: translateY(-6px);
+}
+
+@media (min-width: 0) and (max-width: 630px) {
+  .todo-container {
+    display: flex;
+  }
+  .todo-container h1 {
+    font-size: 15px;
+    text-align: center;
+  }
+  .todo-container button {
+    padding: 0.4em;
+    font-size: 10px;
+  }
+  .todo-container input {
+    padding: 0.4em;
+  }
+  .todo-container .todo-input {
+    display: flex;
+  }
+}/*# sourceMappingURL=index.css.map */

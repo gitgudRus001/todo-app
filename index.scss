@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Work+Sans&display=swap');
+
+body {
+    font-family: 'Work sans';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+
+    // background-color: lightblue;
+
+    input {
+        padding: .6em;
+        border: 0;
+        border-bottom: 1px solid rgb(252, 137, 137);
+    }
+    input:focus {
+        outline: none;
+    }
+
+    button {
+        padding: .6em;
+        width: 80px;
+        border: 0;
+        background-color: rgb(252, 137, 137);
+        border-radius: 5px;
+        color: white;
+        transition: .2s;
+    }
+    button:hover {
+        background-color: rgb(219, 121, 121);
+        transition: .2s;
+    }
+
+    .list {
+        // background-color: blue;
+        margin-top: 30px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        
+
+        li {
+            list-style: none;
+            padding: 1em;
+        }
+    }
+}
+
+.row_list {
+    // background-color: red;
+    display: flex;
+    align-items: center;
+    position: relative;
+    // margin-bottom: 1em;
+    transition: .2s;
+    white-space: nowrap;
+    overflow-x: auto;
+    text-overflow: ellipsis;
+    // width: 820px;
+    
+
+    button {
+        background-color: blue;
+        position: absolute;
+        right: 2em;
+    }
+}
+
+.row_list:hover {
+    box-shadow: 0 0 10px grey;
+    transition: .2s;
+    transform: translateY(-6px);
+}
+
+.sticky{
+    
+}
+
+@media (min-width: 0) and (max-width: 630px) {
+    .todo-container {
+        display: flex;
+        h1 {
+            font-size: 15px;
+            text-align: center;
+        }
+        button {
+            padding: .4em;
+            font-size: 10px;
+        }
+        input {
+            padding: .4em;
+        }
+
+        .todo-input {
+            display: flex;
+        }
+    }
+}

@@ -1,0 +1,78 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Todo Application</title>
+
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        
+        <div class="todo-container">
+           <div class="sticky">
+                <div class="header">
+                    <h1>Todo Application</h1>
+                </div>
+
+                <div class="todo-input">
+                    <input type="text" id="todo-input" placeholder="Type here..." required>
+                    <button type="submit" id="add-todo">ADD</button>
+                </div>
+           </div>
+
+            <div class="list" id="todo-list">
+                
+            </div>
+        </div>
+
+
+        <script>
+            const todo_input = document.getElementById('todo-input');
+            const add_todo_btn = document.getElementById('add-todo');
+            const todo_list = document.getElementById('todo-list');
+            let todo_items_list = [];
+
+            add_todo_btn.addEventListener('click', function() {
+                const todo_text = todo_input.value.trim();
+
+                if (todo_text !== '') {
+                    todo_items_list.push(todo_text);
+                    renderTodoList();
+                    todo_input.value = '';
+                }
+            });
+
+            todo_list.addEventListener('click', function(event) {
+                if (event.target.classList.contains('delete')) {
+                    const listItem = event.target.parentNode;
+                    const index = Array.prototype.indexOf.call(todo_list.children, listItem);
+                    todo_items_list.splice(index, 1);
+                    renderTodoList();
+                }
+            });
+
+            function renderTodoList() {
+                let list_items = '';
+
+                for (let i = 0; i < todo_items_list.length; i++) {
+                    list_items += '<div class="row_list">';
+                    list_items += '<li>' + todo_items_list[i] + '</li>';
+                    list_items += '<button class="delete"><i class="fas fa-trash"></i></button>';
+                    list_items += '</div>';
+                }
+
+                todo_list.innerHTML = list_items;
+            }
+
+            
+
+            
+
+
+            
+
+        </script>
+        <script src="https://kit.fontawesome.com/3f1e7d1a83.js" crossorigin="anonymous"></script>
+    </body>
+    </html>
